@@ -1,7 +1,8 @@
 import requests
 
 url = "https://open.er-api.com/v6/latest/USD"
-response = requests.get(url)
+response = requests.get(url, timeout=10)
+response.raise_for_status()
 data = response.json()
 
 if data.get("result") == "success":
