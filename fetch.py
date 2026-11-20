@@ -15,7 +15,7 @@ if data.get("result") == "success":
 
     provider_ts = datetime.fromtimestamp(data["time_last_update_unix"], tz=timezone.utc)
     conn = psycopg2.connect(
-        host="localhost",
+        host=os.environ.get("DB_HOST", "localhost"),
         user=os.environ["POSTGRES_USER"],
         password=os.environ["POSTGRES_PASSWORD"],
         dbname=os.environ["POSTGRES_DB"],
