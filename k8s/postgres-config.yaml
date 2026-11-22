@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  POSTGRES_DB: fxdata
+  POSTGRES_USER: fx
+kind: ConfigMap
+metadata:
+  name: postgres-config
